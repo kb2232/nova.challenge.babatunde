@@ -1,0 +1,4 @@
+module.exports = {
+	GENERAL_SERVER_PORT: 8000,
+	BACKEND_SERVER_PORT: 3003
+};
