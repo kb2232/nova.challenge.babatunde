@@ -10,6 +10,14 @@
   ### Run app
 
   ```sh
+  # Start backend server (auto-reload)
+  npm run start:server
   # Start frontend dev server (auto-reload)
   npm run start
+  ```
+  ### Randomize data
+
+  ```sh
+  # Calls script that generates from randomuser.me
+  npm run db:randomize
   ```

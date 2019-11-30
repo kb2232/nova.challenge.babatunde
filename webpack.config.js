@@ -2,7 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HTMLwebpackPlugin = require('html-webpack-plugin');
 const Vendor_Library = [
-  'react','react-dom','axios','react-redux','redux'
+  'react','react-dom','axios','react-redux','redux',"concurrently",
+  "body-parser","isomorphic-fetch","moment","morgan","express"
 ];
 
 module.exports = {
@@ -14,6 +15,11 @@ module.exports = {
   output:{
     path: path.resolve(__dirname,'dist'),
     filename: '[name].[chunkhash].js'
+  },
+  node: {
+    fs: 'empty',
+    child_process:'empty',
+    net:'empty'
   },
   module:{
     rules:[

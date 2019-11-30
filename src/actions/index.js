@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // action creators
 
 export const testAction = () =>{
@@ -6,3 +8,5 @@ export const testAction = () =>{
     payload:'this is a test action created'
   }
 }
+
+// fetch record

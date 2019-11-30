@@ -1,3 +1,9 @@
-.body{
+.centralBody{
   padding: 3%;
+}
+.col_cc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
