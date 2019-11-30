@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HTMLwebpackPlugin = require('html-webpack-plugin');
 const Vendor_Library = [
-  'react','react-dom','axios','react-redux','redux',"concurrently",
+  'react','react-dom','axios','react-redux','redux',"concurrently","redux-thunk",
   "body-parser","isomorphic-fetch","moment","morgan","express"
 ];
 

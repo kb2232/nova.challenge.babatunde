@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 
-const testReducer = (currstate=[],action)=>{
+const recordReducer = (currstate=[],action)=>{
   switch(action.type){
     case 'TEST_ACTION':
+      return action.payload;
+    case 'FETCH_RECORDS':
       return action.payload;
     default:
       return currstate;
@@ -10,5 +12,5 @@ const testReducer = (currstate=[],action)=>{
 }
 
 export default combineReducers({
-  testReducer,
+  recordReducer,
 });
