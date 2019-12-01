@@ -19,3 +19,14 @@ export const fetchRecords = (countN)=>{
       })
   }
 }
+
+//archive record
+export const archiveRecord = (record)=>{
+  return async function(dispatch){
+    const response = await JSONplaceholder.patch('/api/requests/archive',record);
+    dispatch({
+        type:'ARCHIVE_RECORDS',
+        payload:response.data
+      })
+  }
+}

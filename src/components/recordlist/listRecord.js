@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {fetchRecords} from '../../actions';
+import {fetchRecords,archiveRecord} from '../../actions';
 
 class RecordList extends Component{
   constructor(props){
@@ -12,6 +12,9 @@ class RecordList extends Component{
   }
   componentDidMount(){
     this.props.fetchRecords(this.state.countN);
+  }
+  archiveMethod(record){
+    this.props.archiveRecord(record)
   }
   renderList(){
     if(this.props.records.reports){
@@ -26,11 +29,13 @@ class RecordList extends Component{
               <br />
               Credit Score: {record.score}
             </div>
+            <button style={styles.ArchiveButton} onClick={()=>this.archiveMethod(record)} >Archive</button>
           </div>
         )
       })
     } else{
-      return <div>LOADING...</div>
+      return <div>LOADING...
+      </div>
     }
   }
   render(){
@@ -72,7 +77,12 @@ const styles = {
     borderWidth: 1,
     borderColor: '#3D68A3',
     cursor:'pointer'
+  },
+  ArchiveButton:{
+    cursor:'pointer',
+    width:"150px",
+    marginTop:'10px'
   }
 }
 
-export default connect(mapstate2props,{fetchRecords})(RecordList);
+export default connect(mapstate2props,{fetchRecords,archiveRecord})(RecordList);

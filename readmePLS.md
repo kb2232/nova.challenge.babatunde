@@ -10,9 +10,8 @@
   ### Run app
 
   ```sh
-  # Start backend server (auto-reload)
-  npm run start:server
   # Start frontend dev server (auto-reload)
+  # this will start both servers
   npm run start
   ```
   ### Randomize data
