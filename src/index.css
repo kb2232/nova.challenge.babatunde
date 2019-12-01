@@ -11,7 +11,7 @@
 .row_c_wrap{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -25,4 +25,10 @@
   justify-content: center;
   align-items: center;
   margin: 5px 10px;
+}
+.button_c_c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }

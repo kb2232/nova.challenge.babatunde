@@ -6,6 +6,8 @@ const recordReducer = (currstate=[],action)=>{
       return action.payload;
     case 'FETCH_RECORDS':
       return action.payload;
+    case 'ARCHIVE_RECORDS':
+        return action.payload;
     default:
       return currstate;
   }
