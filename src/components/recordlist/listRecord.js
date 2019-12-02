@@ -14,7 +14,12 @@ class RecordList extends Component{
     this.props.fetchRecords(this.state.countN);
   }
   archiveMethod(record){
-    this.props.archiveRecord(record)
+    this.props.archiveRecord(record);
+  }
+  
+  loadmoreMethod(){
+    this.props.fetchRecords(this.state.countN+5);
+    this.setState({countN:this.state.countN+5});
   }
   renderList(){
     if(this.props.records.reports){
@@ -25,17 +30,26 @@ class RecordList extends Component{
               <img alt={record.img.thumb} src={record.img.picture} />
             </figure>
             <div>
-              Nmae: {record.firstName} {record.lastName}
+              Name: {record.firstName} {record.lastName}
               <br />
               Credit Score: {record.score}
             </div>
-            <button style={styles.ArchiveButton} onClick={()=>this.archiveMethod(record)} >Archive</button>
+            <button
+            onClick={()=>this.archiveMethod(record)}
+            style={styles.ArchiveButton}
+            >
+              Archive
+            </button>
           </div>
         )
       })
     } else{
-      return <div>LOADING...
-      </div>
+      return <button 
+        onClick={()=>this.props.fetchRecords(this.state.countN)}
+        style={styles.ButtonContainer}
+      >
+      Object Archived!!! Click here to go back!!
+    </button>
     }
   }
   render(){
@@ -47,11 +61,7 @@ class RecordList extends Component{
         </div>
         <div className="button_c_c">
           <button 
-            onClick={()=>{
-              this.setState({countN:this.state.countN+5},()=>{
-                this.props.fetchRecords(this.state.countN);
-              });
-            }}
+            onClick={()=>{this.loadmoreMethod()}}
             style={ButtonContainer}
           >
           LOAD MORE DATA
