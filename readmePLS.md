@@ -20,3 +20,11 @@
   # Calls script that generates from randomuser.me
   npm run db:randomize
   ```
+
+  ### To build 
+
+  ```sh
+  # Builds into a dist directory
+  # cloud server should be built and change localhost to cloud domain
+  npm run build
+  ```
